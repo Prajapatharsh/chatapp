@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {createContext ,useContext ,useState ,useEffect} from "react"
+
 import { AuthContext } from "./AuthContext"
 import { toast } from "react-toastify"
 
@@ -84,10 +86,12 @@ export const ChatProvider =({children})=>{
   }
 
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(()=>{
     subscribeToMessages();
     return ()=> unsubscribeFromMessages();
   },[socket,selectedUser])
+
 
 
     const value={

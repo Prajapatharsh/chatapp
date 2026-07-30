@@ -47,7 +47,8 @@ const RightSidebar = () => {
                 onClick={() => window.open(url)}
                 className="cursor-pointer rounded"
               >
-                <img src={url} alt="image" className="h-full rounded-md" />
+                <img src={url} alt="media thumbnail" className="h-full rounded-md" />
+
               </div>
             ))}
           </div>

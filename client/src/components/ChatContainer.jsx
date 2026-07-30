@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import assets from '../assets/assets'
+
 import { useEffect, useRef,useContext,useState } from 'react'
 import { formatMessageTime } from '../lib/utils'
 import { ChatContext } from '../context/ChatContext'
@@ -41,11 +43,13 @@ const ChatContainer = () => {
       reader.readAsDataURL(file)
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(()=>{
       if(selectedUser){
         getMessages(selectedUser._id)
       }
     },[selectedUser])
+
 
     useEffect(()=>{
         if(scrollEnd.current && messages){

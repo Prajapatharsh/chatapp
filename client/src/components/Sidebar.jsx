@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import assets from '../assets/assets'
+
 import {useContext ,useState,useEffect} from 'react'
 import { ChatContext } from '../context/ChatContext'
 import { AuthContext } from '../context/AuthContext'
@@ -29,9 +31,11 @@ const Sidebar = () => {
         )
         : users
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         getUsers();
     }, [onlineUsers])
+
 
   return (
     <div

@@ -1,13 +1,10 @@
 import { useContext, useState } from "react";
 import assets from "../assets/assets";
 import { AuthContext } from "../context/AuthContext";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-
 
 const LoginPage = () => {
+  const { login } = useContext(AuthContext);
 
-  const { authUser, login } = useContext(AuthContext);
 
   const [currState, setCurrentState] = useState("Sign up");
   const [fullName, setFullName] = useState("");

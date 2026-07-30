@@ -1,5 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext } from "react"
 import { useState } from "react"
+
 import { useEffect } from "react"
 import { toast } from "react-toastify"
 import axios from "axios"
@@ -108,12 +110,14 @@ export const AuthProvider = ({ children }) => {
         })
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         if (token) {
             axios.defaults.headers.common["token"] = token;
             checkAuth();
         }
     }, [token])
+
 
     const value = {
         axios,
