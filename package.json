@@ -1,0 +1,17 @@
+{
+  "name": "quickstart-web",
+  "version": "1.0.0",
+  "description": "QuickStart Web App",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run dev --prefix server",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^10.0.4"
+  }
+}
