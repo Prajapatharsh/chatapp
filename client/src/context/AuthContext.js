@@ -7,8 +7,19 @@ import { toast } from "react-toastify"
 import axios from "axios"
 import { io } from "socket.io-client"
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:4000"
-axios.defaults.baseURL = backendUrl
+const getBackendUrl = () => {
+    if (process.env.REACT_APP_BACKEND_URL) {
+        return process.env.REACT_APP_BACKEND_URL;
+    }
+    if (typeof window !== "undefined" && window.location.hostname !== "localhost" && window.location.hostname !== "127.0.0.1") {
+        return window.location.origin;
+    }
+    return "http://localhost:4000";
+};
+
+const backendUrl = getBackendUrl();
+axios.defaults.baseURL = backendUrl;
+
 
 export const AuthContext = createContext();
 
